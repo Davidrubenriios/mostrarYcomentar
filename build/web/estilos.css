@@ -1,0 +1,330 @@
+body{
+    background-color:  red;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    border: 2px solid black;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: #e5b48a;
+}
+.imgLogoBiblioteca{
+    max-width: 100%;
+    height: auto;
+}
+
+.informacion{
+    text-align: center;
+}
+
+.filaDerecha{
+    border-left: 1px solid black;
+    padding-left: 10px;
+}
+
+.panelAdm{
+    text-align: center;
+}
+.cargaPublicacion {
+    text-align: center;
+}
+
+.formPublicacion {
+    border: 1px solid activeborder;
+    width: 70%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin: auto;
+    background-image: url(./img/hojaRayada.jpg); /* Añadido para establecer la imagen de fondo */
+    background-size: cover; /* Añadido para asegurarse de que la imagen cubra todo el fondo */
+}
+
+
+.imagenPreviews {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tarjetImg {
+    width: 150px;
+    height: auto;
+    padding: 10px;
+    background-color: black;
+    margin: 5px;
+    cursor: pointer;
+    flex: 0 0 calc(25% - 20px); /* 25% - (márgenes a ambos lados) */
+}
+
+.secNotImg {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+}
+
+.textoImg {
+    color: white;
+    font-size: 10px;
+    margin: 0;
+}
+
+.tarjetImg.seleccionada {
+    border: 2px solid #007bff;
+}
+.tarjetImg {
+    position: relative;
+}
+
+.seleccionarImagen {
+    position: absolute;
+    top: 5px;
+    right: 5px; /* Ajusta la posición desde la derecha */
+    width: 20px; /* Ajusta el ancho del checkbox */
+    height: 20px; /* Ajusta la altura del checkbox */
+}
+.formDeImg {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color:  #363942;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formulario {
+    display: grid;
+    gap: 10px;
+}
+
+.campoFormulario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+}
+
+input[type="file"],
+input[type="text"],
+input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 100%;
+
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.form-label{
+    color: black;
+    opacity: 0.8;
+}
+
+.botonEliminar,
+.botonPublicar,
+.botonConfirmar {
+    display: none;
+}
+
+.imagenSeleccionable {
+    display: inline-block;
+    margin: 10px;
+    width: 150px; /* Ajusta el ancho según lo necesites */
+    position: relative; /* Establece el posicionamiento relativo para el contenedor */
+}
+
+.imagenSeleccionable img {
+    width: 100%; /* Haz que la imagen ocupe el 100% del contenedor */
+    height: auto; /* Mantén la proporción de aspecto */
+    border: 1px solid #ccc; /* Añade un borde a las imágenes si lo deseas */
+}
+
+/* Añade un poco de espacio alrededor del checkbox */
+.imagenSeleccionable input[type="checkbox"] {
+    position: absolute; /* Establece el posicionamiento absoluto */
+    top: 0; /* Coloca el checkbox en la esquina superior */
+    right: 0; /* Coloca el checkbox en la esquina derecha */
+}
+.logoRedSocial{
+    width: 5%;
+    height: 5%;
+    min-width: 40px;
+    min-height: 40px;
+    margin:10px;
+}
+.rSocial {
+    margin-top: 50px;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.redSocial{
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    width: 200px
+}
+
+/*formulario de pubicacion*/
+.form-publicacion {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 50%;
+    max-width: 400px; /* Ajusta el ancho máximo según tus preferencias */
+    margin: auto; /* Centrar en el eje horizontal */
+}
+
+.form-title {
+    text-align: center;
+    color: #333;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-submit {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+.form-submit:hover {
+    background-color: #45a049;
+}
+
+/*imagen dentro del formulario */
+.contenedorCuadricula {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.tarjetaImagen {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.tarjetaImagen img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* contenedor de imagen de la noticia en el inde*/
+.contenedor-imagenes{
+    border: solid #333;
+    border-radius: 3%;
+    padding: 10px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.noticia-texto {
+    font-size: 18px; /* Tamaño de fuente */
+    line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+    color: #333; /* Color del texto */
+    text-align: justify; /* Justificar el texto */
+    /* Otros estilos que desees agregar */
+}
+
+
+
+.fecha-publicacion {
+    text-align: right;
+}
+
+.d-grid.gap-2.d-md-block {
+    margin-bottom: 20px; /* Ajusta el valor según sea necesario */
+}
+
+/* FORMULARIO DE COMENTARIO */
+[id^="formulario_"] {
+    position: relative;
+}
+
+.form-control {
+    width: calc(100% - 10px);
+    margin-bottom: 10px;
+}
+
+.enviarBtn {
+    position: absolute;
+    margin: 20px;
+    bottom: 0px;
+    right: 0;
+}
+
+/*COMENTARIO EN PANTALLA */
+.comentario-container {
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    background-color: #363942;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.comentario-nombre {
+    text-align: left;
+    margin-left: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: underline; /* Nuevo: Subrayar el nombre */
+    display: inline-block; /* Nuevo: Permitir que el mensaje esté al lado del nombre */
+}
+
+.comentario-mensaje {
+    color: #ccc;
+    text-align: left;
+    margin-left: 5px; /* Nuevo: Ajuste para el espacio entre el nombre y el mensaje */
+    font-size: 10px;
+    display: inline-block; /* Nuevo: Permitir que el mensaje esté al lado del nombre */
+}
