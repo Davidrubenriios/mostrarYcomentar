@@ -121,18 +121,18 @@
                         <form action="SerGuardarImg" method="post" enctype="multipart/form-data" class="formulario">
                             <div class="campoFormulario">
                                 <label for="imgFoto" >Seleccionar Foto:</label>
-                                <input type="file" name="imgFoto" id="imgFoto" onchange="generarNombreYFecha()"> 
+                                <input type="file" name="imgFoto" id="imgFoto" onchange="generarNombreYFecha()" required=""> 
                             </div>
                             <div class="campoFormulario">
                                 <label for="nombreFoto">Nombre de la Foto:</label>
-                                <input type="text" name="nombreFoto" id="nombreFoto">
+                                <input type="text" name="nombreFoto" id="nombreFoto" required="">
                             </div>
                             <div class="campoFormulario">
                                 <label for="fechaFoto">Fecha de la Foto:</label>
-                                <input type="date" name="fechaFoto" id="fechaFoto">
+                                <input type="date" name="fechaFoto" id="fechaFoto" required="">
                             </div>
                             <div class="campoFormulario">
-                                <input type="submit" value="Guardar Foto">
+                                <input type="submit" value="Guardar Foto" required="">
                             </div>
                         </form>
                     </div>

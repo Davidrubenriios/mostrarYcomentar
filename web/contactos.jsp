@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <script src="funciones.js" type="text/javascript"></script>
         <link href="estilos.css" rel="stylesheet" type="text/css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -13,9 +14,7 @@
     </head>
     <body>
         <div class="container">    
-            <div>
-                <img src="img/logo-biblioteca.jpg" alt="Imagen de la Biblioteca Jose M. Estrada" class="imgLogoBiblioteca"/>
-            </div>
+
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
 
                 <div class="container-fluid">
@@ -55,7 +54,7 @@
                                 if (sesion != null && sesion.getAttribute("usuario") != null) {
                                     // El administrador está autenticado
                                     String nombreUsuario = ((Admisnistrador) sesion.getAttribute("usuario")).getNombre(); // Obtener el nombre del usuario desde el objeto Admisnistrador
-%>
+                            %>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <%= nombreUsuario%>
@@ -72,9 +71,10 @@
 
         </div>
         <div class="container">
-            <h1 style="text-align-last: center">Te podes comunicar con nosotroe aqui..</h1>
+
             <div class="row informacion filaIzquierda">
-                <div class="col-9">
+                <div class="col-md-9"> 
+                    <h1 style="text-align-last: center">Te podes comunicar con nosotroe aqui..</h1>
                     <ol class="rSocial">
                         <li> <a class="redSocial" href=""><img class="logoRedSocial" src="img/whatsapp.png" alt="LOGO DE WHATSAPP"/> <h5> - WHATSAPP </h5> </a> </li>
                         <li> <a class="redSocial" href=""><img class="logoRedSocial" src="img/facebook.png" alt="LOGO FACEBOOK"/> <h5> - FACEBOOK </h5> </a> </li>
@@ -83,7 +83,7 @@
                     </ol>
 
                 </div>
-                <div class="col-3 filaDerecha">
+                <div class="col-md-3 filaDerecha">
                     <h5>Estamos aquí</h5>
                     <div>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d877.788941711587!2d-59.26091176931103!3d-28.35413993432944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x944f0e4bfaa6fbb5%3A0x9a05076d3c2471ca!2sBiblioteca%20Popular%20%22Jos%C3%A9%20Manuel%20Estrada%22!5e0!3m2!1ses-419!2sar!4v1695090432080!5m2!1ses-419!2sar" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

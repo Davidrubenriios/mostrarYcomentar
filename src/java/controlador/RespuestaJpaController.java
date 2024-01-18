@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package controlador;
 
 import controlador.exceptions.NonexistentEntityException;
@@ -134,6 +131,18 @@ public class RespuestaJpaController implements Serializable {
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();
+        } finally {
+            em.close();
+        }
+    }
+    
+       public List<Respuesta> findRespuestasByIdComentario(Integer idComentario) {
+        EntityManager em = getEntityManager();
+        try {
+            // Utilizando JPQL para obtener respuestas por el ID del comentario
+            Query query = em.createQuery("SELECT r FROM Respuesta r WHERE r.idComentarios.idComentarios = :idComentario");
+            query.setParameter("idComentario", idComentario);
+            return query.getResultList();
         } finally {
             em.close();
         }

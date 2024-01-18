@@ -1,10 +1,82 @@
-body{
-    background-color:  red;
-}
-
-*{
+body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    color: #afafaf;
+    font: normal 12px/1.8em Arial, Helvetica, sans-serif;
+    position: relative;
+    background: url(img/cueroNegro.jpg) center/cover no-repeat;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/*CONTENEDOR PRINSIPAL*/
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    background: url('img/fondo3.jpg') center/cover no-repeat fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('img/fondo3.jpg') center/cover no-repeat fixed;
+    background-position: center top;
+}
+
+.imgLogoBiblioteca {
+    width: 35%;
+    height: auto;
+}
+.animated-text {
+    font-size: 3em;
+    text-align: center;
+    animation: fadeIn 3s ease-in-out  alternate;
+}
+
+.animated1-text {
+    font-size: 2em;
+    text-align: center;
+    animation: fadeIn 3s ease-in-out  alternate;
+    color: #76e7de;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.animated-text8 {
+    font-size: 3em;
+    text-align: center;
+    animation: moveText 1s infinite alternate;
+    color:  #76e7de;
+    font-weight: bold; /* Puedes ajustar el valor según tus preferencias, por ejemplo: bold, bolder, 600, 700, etc. */
+    border: none;
+    background: none;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px); /* Ajusta según la distancia de movimiento */
+    }
 }
 
 .container{
@@ -281,7 +353,7 @@ input[type="submit"]:hover {
 }
 
 .d-grid.gap-2.d-md-block {
-    margin-bottom: 20px; /* Ajusta el valor según sea necesario */
+    margin-bottom: 50px; /* Ajusta el valor según sea necesario */
 }
 
 /* FORMULARIO DE COMENTARIO */
@@ -303,28 +375,186 @@ input[type="submit"]:hover {
 
 /*COMENTARIO EN PANTALLA */
 .comentario-container {
-    margin-bottom: 5px;
+    width: 90%;
+    margin-bottom: 5px; /* Ajusta el espacio entre comentarios */
     border: 1px solid #ddd;
     border-radius: 15px;
-    background-color: #363942;
+    background-color: rgba(54, 57, 66, 0.8); /* Color con opacidad */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex; /* Utilizar flexbox para organizar elementos en fila */
+    align-items: center; /* Centrar verticalmente los elementos en el contenedor */
+    padding: 3px;
 }
 
 .comentario-nombre {
     text-align: left;
-    margin-left: 15px;
-    margin-top: 0;
-    margin-bottom: 0;
     font-size: 16px;
     color: #007bff;
-    text-decoration: underline; /* Nuevo: Subrayar el nombre */
-    display: inline-block; /* Nuevo: Permitir que el mensaje esté al lado del nombre */
+    text-decoration: underline;
+}
+
+.nombre-con-dos-puntos {
+    display: inline-block;
 }
 
 .comentario-mensaje {
     color: #ccc;
     text-align: left;
-    margin-left: 5px; /* Nuevo: Ajuste para el espacio entre el nombre y el mensaje */
-    font-size: 10px;
-    display: inline-block; /* Nuevo: Permitir que el mensaje esté al lado del nombre */
+    margin-left: 15px; /* Ajuste para el espacio entre el nombre y el mensaje */
+    font-size: 14px;
+}
+
+.cerrarBtnContainer {
+    float: right;
+}
+.numeroConetador {
+    font-size: 13px;
+    color: red;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    left: -2px;
+    top: -7px;
+}
+
+/*BOTON EN COMENTARIO*/
+.respuestaComentario {
+    margin-left: auto; /* Empujar el botón hacia la derecha */
+}
+/*FORMUALARIO COMENTARIO */
+.fromularioComentario{
+    display: none;
+    margin-top: 10px;
+    width: 60%;
+    border: 1px solid  #333;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+/*RESPUESTA EN PANTALLA */
+.respuesta-container {
+    width: 90%;
+    margin-bottom: 5px; /* Ajusta el espacio entre comentarios */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: rgba(218, 215, 206, 0.8); /* Color con opacidad */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex; /* Utilizar flexbox para organizar elementos en fila */
+    align-items: center; /* Centrar verticalmente los elementos en el contenedor */
+    padding: 3px;
+    margin-left: auto; /* Desplazar el contenedor hacia la derecha */
+}
+
+.respuesta-nombre {
+    text-align: left;
+    font-size: 16px;
+    color:  goldenrod;
+    text-decoration: underline;
+}
+
+.nombre-con-dos-puntos {
+    display: inline-block;
+}
+
+.respuesta-mensaje {
+    color:  #333;
+    text-align: left;
+    margin-left: 15px; /* Ajuste para el espacio entre el nombre y el mensaje */
+    font-size: 14px;
+}
+.botonMostrarRespuestas{
+    float:  right;
+    border: none;
+    background: none;
+}
+
+/*FORMUALARIO RESPUESTA */
+.fromularioRespuesta{
+    display: none;
+    margin-top: 10px;
+    width: 60%;
+    border: 1px solid  #333;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.separacionDeNoticias{
+    margin-top: 10px;
+}
+
+
+
+/*BOTON FLOTANTE PARA IR AL PRINCIPIO DE LA PAGINA*/
+#floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
+
+
+
+
+/* ESTILO DE IMAGEN DE PUBLICIDAD */
+ .carousel-container {
+    background-color: rgba(54, 57, 66, 0.8); 
+    padding: 15px;
+}
+
+   .carousel-image {
+     
+        width: 100%;
+        height: 150px;
+        object-fit: contain;
+    }
+
+/* BOTON DE COMPARTIR */
+.BotonesDeCompartir{
+    background-color:  #cccc00;
+    display: none;
+    z-index: 2;
+}
+
+.botonFace{
+    border: none;
+}
+
+.botonWhat{
+    border:none;
+}
+
+.content {
+    margin-top: 200px;
+    text-align: center;
+}
+
+/* Añade estilos para la barra fija */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.navbar.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar.transparent-bg {
+    background-color: transparent;
+    padding: 5px 0;
+}
+
+.bordeTarjeta{
+    border: 3px solid  #333;
+    border-radius: 5px;
+}
+
+/* ESTILO RESOLUCION MENOR A 768px*/
+@media(max-width:768px){
+    .d-grid.gap-2.d-md-block {
+        margin-bottom: 15px; /* Ajusta el valor según sea necesario */
+    }
 }
